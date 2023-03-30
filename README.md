@@ -14,5 +14,6 @@ Aluna: [Raquel dos Santos Garcia](https://github.com/raquelgarciaa)
 
 ## Log do projeto
 | Data | Descrição |
+| --- | --- |
 | 30/03/2023 | Criando conexão com vercel |
 
