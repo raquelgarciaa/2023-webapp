@@ -2,9 +2,34 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import React from "react";
+
+const Componente = () => null;
+const Botao = (props: any) => {
+  const [count, setCount] = useState(0)
+  return(
+    <button onClick={() => setCount((count) => count + 1)}>
+      {props.titulo}
+      {count}
+    </button>
+  )
+}
 
 function App() {
   const [count, setCount] = useState(0)
+  //     nome variável, função
+
+  const PlusButao = () => {
+    setCount(count+1)
+  }
+
+  const SubButao = () => {
+    setCount(count-1)
+  }
+
+  const Zerro = () => {
+    setCount(0)
+  }
 
   return (
     <>
@@ -18,9 +43,13 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
+        <p> {count} </p>
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
+  
+        <Botao titulo="Incrementar" ></Botao>
+
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
