@@ -12,7 +12,34 @@ const Botao = (props: any) => {
       {props.titulo}
       {count}
     </button>
-  )
+  );
+}
+const ListaItem = (props:any) =>{
+  return <li key={props.indice}> {props.titulo}</li>
+
+}
+
+const List = () =>{
+  const tarefas = [
+    "Baixar aaa",
+    "Baixar bbb",
+    "Baixar ccc"
+  ];
+  return(
+    <div className="card">
+      <ul> 
+        {tarefas.map((item, ind) => 
+        <ListaItem indice={ind} titulo={item} />)
+        }
+      
+      </ul>
+      <ul>
+      <li key={0}> {tarefas[0]}</li>
+      <li key={1}> {tarefas[1]}</li>
+      </ul>
+    </div>
+
+  );
 }
 
 function App() {
@@ -49,14 +76,9 @@ function App() {
         </button>
   
         <Botao titulo="Incrementar" ></Botao>
-
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+        <List></List>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
     </>
   )
 }
